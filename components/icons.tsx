@@ -31,7 +31,8 @@ import {
   Twitter,
   User,
   X,
-  type Icon as LucideIcon, // eslint-disable-line import/no-unresolved
+  // @ts-ignore
+  type Icon as LucideIcon,
 } from "lucide-react"
 
 export type Icon = LucideIcon
