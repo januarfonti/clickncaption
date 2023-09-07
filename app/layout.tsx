@@ -4,6 +4,7 @@ import "./globals.css"
 
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import Script from "next/script"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
@@ -43,6 +44,16 @@ export default function RootLayout({
           <Toaster />
         </ThemeProvider>
       </body>
+      {process.env.NODE_ENV === "production" && (
+        <>
+          <Script
+            async
+            src="https://analytics.fonti.dev/script.js"
+            data-website-id="71a659df-7e7f-481a-af64-4640ff56068b"
+            strategy="lazyOnload"
+          />
+        </>
+      )}
     </html>
   )
 }
